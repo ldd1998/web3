@@ -58,7 +58,7 @@ contract FundMe {
      * @dev 构造函数，初始化价格馈送地址和锁定期
      * @param _lockTime 锁定期时长
      */
-    constructor(uint256 _lockTime) {
+    constructor(uint256 _lockTime,address dataFeed) {
         // sepolia testnet
         dataFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
         owner = msg.sender;
