@@ -21,4 +21,4 @@ module.exports = async ({getNamedAccounts, deployments}) => {
     })
 }
 // 设置脚本标签
-module.exports.tags = ["FundMe"]
+module.exports.tags = ["all","FundMe"]
