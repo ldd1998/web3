@@ -1,0 +1,3 @@
+const DECIMALS = 8
+const INIT_IAL_ANSWER = 30000000
+module.exports = {DECIMALS, INIT_IAL_ANSWER}

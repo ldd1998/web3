@@ -1,0 +1,50 @@
+# Node modules
+/node_modules
+
+# Compilation output
+/dist
+
+# pnpm deploy output
+/bundle
+
+# Hardhat Build Artifacts
+/artifacts
+
+# Hardhat compilation (v2) support directory
+/cache
+
+# Typechain output
+/types
+
+# Hardhat coverage reports
+/coverage
+
+node_modules
+.env
+
+# Hardhat files
+/cache
+/artifacts
+
+# TypeChain files
+/typechain
+/typechain-types
+
+# solidity-coverage files
+/coverage
+/coverage.json
+
+# Hardhat Ignition default folder for deployments against a local node
+ignition/deployments/chain-31337
+/.idea/.gitignore
+/deployments/sepolia/.chainId
+/.nyc_output/processinfo/4f9c1079-7eb9-4836-b92e-381b4d49bc4d.json
+/.nyc_output/4f9c1079-7eb9-4836-b92e-381b4d49bc4d.json
+/deployments/sepolia/solcInputs/a151324b26cf465dfd83a0bacfe4b1f0.json
+/.idea/FundMe.iml
+/deployments/sepolia/FundMe.json
+/.nyc_output/processinfo/index.json
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/dictionaries/project.xml
+/.idea/vcs.xml
