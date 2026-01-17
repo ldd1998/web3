@@ -22,7 +22,7 @@ module.exports = async ({getNamedAccounts, deployments}) => {
         from: firstAccount,
         args: [LOCK_TIME, dataFeedAddress],
         log: true,
-        waitConfirmations:CONFIRMATIONS
+        // waitConfirmations:CONFIRMATIONS
     })
     // verify
     if (hre.network.config.chainId === 11155111 && process.env.ETHERSCAN_API_KEY) {
