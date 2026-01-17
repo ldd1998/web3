@@ -3,7 +3,7 @@
 // 导出部署函数
 const {networks} = require("../hardhat.config");
 const {network} = require("hardhat");
-const {developmentChains, networkConfig, LOCK_TIME} = require("../helper-hardhat-config")
+const {developmentChains, networkConfig, LOCK_TIME,CONFIRMATIONS} = require("../helper-hardhat-config")
 module.exports = async ({getNamedAccounts, deployments}) => {
     // 从 deployments 中获取 deploy 函数
     const {deploy} = deployments
@@ -21,7 +21,8 @@ module.exports = async ({getNamedAccounts, deployments}) => {
     const fundeMe = await deploy("FundMe", {
         from: firstAccount,
         args: [LOCK_TIME, dataFeedAddress],
-        log: true
+        log: true,
+        waitConfirmations:CONFIRMATIONS
     })
     // verify
     if (hre.network.config.chainId === 11155111 && process.env.ETHERSCAN_API_KEY) {
@@ -30,7 +31,7 @@ module.exports = async ({getNamedAccounts, deployments}) => {
             constructorArguments: [LOCK_TIME, dataFeedAddress]
         })
     } else {
-        console.log("network no sepolia,verify skip")
+        console.log("network is not sepolia,verify skip")
     }
 }
 // 设置脚本标签

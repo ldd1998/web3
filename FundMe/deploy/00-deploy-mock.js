@@ -18,7 +18,7 @@ module.exports = async ({getNamedAccounts, deployments}) => {
             log: true
         })
     }else {
-        console.log("network no sepolia,mock deploy skip")
+        console.log("network is not sepolia,mock deploy skip")
     }
 }
 // 设置脚本标签
