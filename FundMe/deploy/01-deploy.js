@@ -11,10 +11,9 @@ module.exports = async ({getNamedAccounts, deployments}) => {
     const firstAccount = (await getNamedAccounts()).firstAccount
     const secondAccount = (await getNamedAccounts()).secondAccount
     let dataFeedAddress
-    if (developmentChains.include(network.name)) {
+    if (developmentChains.includes(network.name)) {
         const mockV3Aggregator = await deployments.get("MockV3Aggregator");
         dataFeedAddress = mockV3Aggregator.address;
-
     } else {
         dataFeedAddress = networkConfig[network.config.chainId].ethUsdDataFeed
     }

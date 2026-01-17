@@ -4,7 +4,8 @@ const {DECIMALS, INIT_IAL_ANSWER, developmentChains, networkConfig} = require(".
 const {network} = require("hardhat");
 // 导出部署函数
 module.exports = async ({getNamedAccounts, deployments}) => {
-    if (developmentChains.include(network.name)) {
+    console.log("network:", network.name)
+    if (developmentChains.includes(network.name)) {
         // 从 deployments 中获取 deploy 函数
         const {deploy} = deployments
         // 获取第一个和第二个账户
