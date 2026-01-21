@@ -1,6 +1,7 @@
 // 测试合约 FundMe
 const {ethers, deployments, getNamedAccounts} = require('hardhat')
-const {assert} = require('chai')
+const {assert, expect} = require('chai')
+const helpers = require('@nomicfoundation/hardhat-network-helpers')
 
 // 第一个测试套件：使用 hardhat-deploy 插件的 fixture 功能
 describe('test fundme', () => {
@@ -28,6 +29,11 @@ describe('test fundme', () => {
     it('test if the owner is msg.sender', async () => {
         assert.equal(await fundMe.owner(), await firstAccount)
     })
+    it('should be fail when windows close',async () => {
+        await helpers.time.increase(400)
+        await helpers.mine()
+        await expect(fundMe.fund({value: ethers.parseEther("100")})).to.be.revertedWith("window is closed")
+    });
 })
 
 // 第二个测试套件：使用标准的 ethers.js 流程手动部署合约进行测试
